@@ -1,0 +1,26 @@
+# Face Expression Recognition Project Requirements
+# Generated from neuro conda environment
+# To regenerate: conda activate neuro && pip list --format=freeze | grep -E "(torch|torchvision|kagglehub|matplotlib|numpy|pillow|PIL|tqdm|pandas|scikit-learn|scikit-image|opencv)" > requirements.txt
+
+# Core deep learning frameworks
+torch==2.9.1
+torchvision==0.24.1
+torchinfo==1.8.0
+
+# Data handling and visualization
+numpy==2.2.6
+pandas==2.3.3
+matplotlib==3.10.8
+matplotlib-inline==0.2.1
+
+# Image processing
+pillow==12.0.0
+opencv-python==4.12.0.88
+scikit-image==0.25.2
+
+# Machine learning utilities
+scikit-learn==1.7.2
+
+# Dataset and utilities
+kagglehub==0.3.13
+tqdm==4.67.1
