@@ -134,6 +134,55 @@ conda activate neuro && pip freeze > requirements.txt
 
 ## Usage
 
+### Command Line Interface (Recommended)
+
+The `main.py` script provides a command-line interface for training and evaluating models:
+
+**Basic Usage:**
+
+```bash
+# Train model v0 (Custom CNN) for 20 epochs
+python main.py --model v0 --train --epochs 20
+
+# Train model v1 (Transfer Learning) for 10 epochs
+python main.py --model v1 --train --epochs 10
+
+# Load and evaluate saved model
+python main.py --model v0 --eval --plot
+
+# Retrain existing model with custom learning rate
+python main.py --model v0 --train --epochs 15 --lr 0.0005
+```
+
+**Available Options:**
+
+- `--model {v0,v1}`: Select model (v0 = Custom CNN, v1 = Transfer Learning) **[Required]**
+- `--train`: Train the model (will retrain if model exists)
+- `--epochs N`: Number of training epochs (default: 10)
+- `--lr FLOAT`: Learning rate (default: 0.001 for v0, 0.0001 for v1)
+- `--batch-size N`: Batch size (default: 32)
+- `--eval`: Evaluate model on test set
+- `--plot`: Plot training curves and confusion matrix
+- `--confusion-matrix`: Show confusion matrix
+- `--test-image`: Test model with a random image
+
+**Examples:**
+
+```bash
+# Full training with evaluation and plots
+python main.py --model v0 --train --epochs 20 --plot --eval --test-image
+
+# Quick evaluation of saved model
+python main.py --model v1 --eval --confusion-matrix
+
+# Train with custom parameters
+python main.py --model v1 --train --epochs 5 --lr 0.00005 --batch-size 64
+```
+
+### Jupyter Notebook
+
+Alternatively, you can use the Jupyter notebook:
+
 1. **Open the notebook**:
 
    ```bash
